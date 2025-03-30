@@ -1,0 +1,249 @@
+/* Basico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #25b4bea4;
+}
+
+/* Container principal */
+.pokedex-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+.pokedex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 10px;
+  color: rgb(0, 0, 0);
+}
+
+.pokedex-header h1 {
+  font-size: 2rem;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.search-bar {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  width: 200px;
+}
+
+.search-button {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 5px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  background-color: #0056b3;
+}
+
+/* Sugestoes (autocomplete) */
+.suggestion-list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 200px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 5px;
+  z-index: 999;
+  color: black;
+}
+
+.suggestion-item {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+.suggestion-img {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+}
+
+/* Lista principal (grid) */
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Card */
+.pokemon-card {
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.pokemon-card:hover {
+  transform: scale(1.05);
+}
+
+/* Imagem maior */
+.card-pokemon-img {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 10px;
+}
+
+/* Nome e número no canto sup esquerdo */
+.pokemon-info-overlay {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.pokemon-info-overlay span {
+  display: block;
+  font-size: 0.8rem;
+  color: #333;
+}
+
+.pokemon-info-overlay h3 {
+  font-size: 1rem;
+  color: #333;
+  margin-top: 2px;
+}
+
+/* Tipos: PNG maior */
+.pokemon-type-img {
+  width: 80px;          /* Aumente conforme desejar */
+  height: auto;         /* Mantém a proporção da imagem */
+  object-fit: contain;  /* Garante que a imagem não fique distorcida */
+  margin: 0 4px;        /* Pequeno espaço lateral entre tipos */
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  color: #fff;
+  margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  width: 600px; /* Modal maior */
+  max-height: 80vh;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  overflow-y: auto;
+}
+
+/* Header do modal */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+/* Corpo do modal */
+.modal-body {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.modal-pokemon-img {
+  width: 150px;
+  height: 150px;
+}
+
+/* Atributos em caixas */
+.attribute-box {
+  background: #f8f8f8;
+  margin: 10px 0;
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+}
+
+.attribute-label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.attribute-value {
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.modal-types {
+  width: 100px; /* Exemplo: ainda maior no modal */
+  height: auto;
+  display: flex;
+  gap: 6px;
+}
+
+/* Removendo a parte de pokemon-details (já não está mais sendo utilizado) */
+.pokemon-details {
+  display: none; /* Não vai mais ser exibido */
+}
